@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 
 export const SMURF_START = "SMURF_START"
-export const SMURF_SUCCCESS = "SMURF_SUCCESS"
+export const SMURF_SUCCESS = "SMURF_SUCCESS"
 export const SMURF_FAILED = "SMURF_FAILED"
 
 export const getSmurf =() => {
@@ -11,7 +11,7 @@ export const getSmurf =() => {
         axios
         .get('http://localhost:3333/smurfs')
         .then(res => {
-            dispatch({type: SMURF_SUCCCESS, payload: res.data})
+            dispatch({type: SMURF_SUCCESS, payload: res.data})
             
         })
 .catch(err => {

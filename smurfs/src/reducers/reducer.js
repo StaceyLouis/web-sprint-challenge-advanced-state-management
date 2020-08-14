@@ -3,8 +3,8 @@ import {
     SMURF_SUCCESS,
     SMURF_FAILED,
     POST_SMURF_START,
-    POST_NEW_SUCCESS,
-    POST_NEW_FAILED
+    POST_SMURF_SUCCESS,
+    POST_SMURF_FAILED
 } from '../actions/action'
 
 const initialState = {
@@ -27,7 +27,33 @@ export const reducer = (state = initialState, action) => {
           isLoading: false,
           smurfs: action.payload
         };
-        case SMURF_FAILED 
+        case SMURF_FAILED:
+            return{
+                ...state,
+                isLoading: false,
+                error: action.payload
+            }
+        case POST_SMURF_START:
+            return{
+                ...state,
+              smurfs:  [...state.smurfs, action.payload],
+                isLoading: true,
+                error: ''
+
+            }
+            case POST_SMURF_SUCCESS:
+                return{
+                    ...state,
+                  smurfs: action.payload,
+                    isLoading: false,
+                    error: ''
+                }
+                case POST_SMURF_FAILED:
+                    return{
+                        ...state,
+                        isLoading: false,
+                        error: action.payload
+                    }
       default:
         return state;
     }
