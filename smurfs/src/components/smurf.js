@@ -2,10 +2,17 @@ import React,{useState} from 'react'
 import {connect} from 'react-redux'
 import {postSmurf} from '../actions/action'
 
+const inititialState = {
+    name: "",
+    age:"",
+    height:''
+}
+
 const NewSmurf = props => {
-    const [smurf, setSmurf] = useState({name: "", age: '', heiht: ''})
+    const [smurf, setSmurf] = useState(inititialState)
 const handleChanges = e => {
-    setSmurf({...smurf, [e.target.name]:e.tget.value})
+    setSmurf({...smurf, 
+        [e.target.name]:e.target.value})
 }
 
 const onSubmit = e => {
