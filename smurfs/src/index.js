@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./components/App";
+import "./components/App.css"
 import {createStore, applyMiddleware} from 'redux'
 import {Provider} from 'react-redux'
 import thunk from 'redux-thunk'
@@ -13,9 +14,9 @@ const store = createStore(reducer, applyMiddleware(thunk))
 function Apps() {
     return (
         <div>
-            <h1> Smurfs</h1>
-            <div><Village/></div>
             <div><Smurf/></div>
+            <div><Village/></div>
+           
         </div>
     )
 }

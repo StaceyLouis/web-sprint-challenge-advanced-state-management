@@ -1,13 +1,14 @@
 import React from 'react'
+import './App.css'
 
 function SmurfCard(props) {
     const {smurf } = props;
 
     return(<div>
-<div >
-    <p>Name: {smurf.name}</p>
-    <p>Height: {smurf.height}</p>
-    <p>Age: {smurf.age}</p>
+<div className="card" >
+    <h2> Name</h2><p>{smurf.name}</p>
+   <h2>Height:</h2> <p>{smurf.height}</p>
+  <h2>Age:</h2><p> {smurf.age}</p>
 </div>
 
     </div>)

@@ -26,31 +26,33 @@ const onSubmit = e => {
 }
 
 return (   
-    <div>
+    <div className="form-wrap">
     <form onSubmit={onSubmit}>
-<label htmlFor="name">Name</label>
+        <h1> Smurf Registration</h1> <hr/>
+<label htmlFor="name">Name</label> <br/>
 <input 
 type="text"
 name="name"
 id="name"
 onChange={handleChanges}
 value={smurf.name} />
+<br/>
 
-<label htmlFor="Age">Age</label>
+<label htmlFor="Age">Age</label><br/>
 <input
 type="text"
 name="age"
 value={smurf.age}
 onChange={handleChanges} />
-
-<label htmlFor="height">Height</label>
+<br/>
+<label htmlFor="height">Height</label><br/>
 <input
 type="text"
 name="height"
 value={smurf.height}
 onChange={handleChanges} />
-
-<button onClick={onSubmit}>Add New Smurf</button>
+<br/>
+<button onClick={onSubmit}>Register New Smurf</button>
 
     </form>
     
